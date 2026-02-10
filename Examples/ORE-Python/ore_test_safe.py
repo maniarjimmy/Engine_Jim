@@ -15,21 +15,13 @@
 
 import sys, time
 from ORE import *
-import os
 
-# Get the directory where this script is located
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Set CWD to script directory to ensure ORE can resolve all relative paths in xml
-os.chdir(script_dir)
+#############################################
+# Read inputs from files and kick off ORE run
 
 print ("Loading parameters...")
 params = Parameters()
-# input_file = os.path.join("Input", "ore.xml")
-# input_file = os.path.join("Input", "ore_exp1.xml")
-# input_file = os.path.join("Input", "ore_exp3.xml")
-input_file = os.path.join("Input", "ore_sofr.xml")
-params.fromFile(os.path.join(script_dir, input_file))
+params.fromFile("Input/ore.xml")
 
 print ("Creating OREApp...")
 ore = OREApp(params, True)
@@ -48,7 +40,7 @@ for name in analyticTypes:
     print("analytc:", name)
 
 print("\npress <enter> ...")
-# sys.stdin.readline()
+sys.stdin.readline()
 
 #####################################
 # List all results, reports and cubes
@@ -64,7 +56,7 @@ for name in cubeNames:
     print("cube:", name)
 
 print("\npress <enter> ...")
-# sys.stdin.readline()
+sys.stdin.readline()
 
 #######################
 # Access report details
@@ -129,7 +121,7 @@ print ("Skipping exposure report (Simulation disabled)")
 # Access one analytic e.g. to query the market or portfolio
 
 print("\npress <enter> ...")
-# sys.stdin.readline()
+sys.stdin.readline()
 
 print("Inspect NPV analytic ...")
 analytic = ore.getAnalytic("NPV")
@@ -137,7 +129,7 @@ market  = analytic.getMarket()
 
 print("Market asof:", market.asofDate())
 
-curve = market.discountCurve("USD")
+curve = market.discountCurve("EUR")
 print("EUR discount factor at 10Y =", curve.discount(10 * Years))
 
 portfolio = analytic.portfolio()

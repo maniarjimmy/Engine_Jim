@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Portfolio>
-  <Trade id="Swap_20y">
-    <TradeType>Swap</TradeType>
+  <Trade id="XCCY_Swap_10y_Force">
+    <TradeType>CrossCurrencySwap</TradeType>
     <Envelope>
       <CounterParty>CPTY_A</CounterParty>
       <NettingSetId>CPTY_A</NettingSetId>
@@ -9,40 +9,15 @@
     </Envelope>
     <SwapData>
       <LegData>
-        <LegType>Fixed</LegType>
+        <LegType>Floating</LegType>
         <Payer>false</Payer>
         <Currency>EUR</Currency>
         <Notionals>
-          <Notional>20000000.000000</Notional>
-        </Notionals>
-        <DayCounter>30/360</DayCounter>
-        <PaymentConvention>F</PaymentConvention>
-        <FixedLegData>
-          <Rates>
-            <Rate>0.02</Rate>
-          </Rates>
-        </FixedLegData>
-        <ScheduleData>
-          <Rules>
-            <StartDate>20160301</StartDate>
-            <EndDate>20260301</EndDate>
-            <Tenor>1Y</Tenor>
-            <Calendar>TARGET</Calendar>
-            <Convention>F</Convention>
-            <TermConvention>F</TermConvention>
-            <Rule>Forward</Rule>
-            <EndOfMonth/>
-            <FirstDate/>
-            <LastDate/>
-          </Rules>
-        </ScheduleData>
-      </LegData>
-      <LegData>
-        <LegType>Floating</LegType>
-        <Payer>true</Payer>
-        <Currency>EUR</Currency>
-        <Notionals>
-          <Notional>20000000.000000</Notional>
+          <Notional>10000000.000000</Notional>
+          <Exchanges>
+            <NotionalInitialExchange>true</NotionalInitialExchange>
+            <NotionalFinalExchange>true</NotionalFinalExchange>
+          </Exchanges>
         </Notionals>
         <DayCounter>A360</DayCounter>
         <PaymentConvention>MF</PaymentConvention>
@@ -60,6 +35,42 @@
             <EndDate>20260301</EndDate>
             <Tenor>6M</Tenor>
             <Calendar>TARGET</Calendar>
+            <Convention>MF</Convention>
+            <TermConvention>MF</TermConvention>
+            <Rule>Forward</Rule>
+            <EndOfMonth/>
+            <FirstDate/>
+            <LastDate/>
+          </Rules>
+        </ScheduleData>
+      </LegData>
+      <LegData>
+        <LegType>Floating</LegType>
+        <Payer>false</Payer>
+        <Currency>USD</Currency>
+        <Notionals>
+          <Notional>11323370.000000</Notional>
+          <Exchanges>
+            <NotionalInitialExchange>true</NotionalInitialExchange>
+            <NotionalFinalExchange>true</NotionalFinalExchange>
+          </Exchanges>
+        </Notionals>
+        <DayCounter>A360</DayCounter>
+        <PaymentConvention>MF</PaymentConvention>
+        <FloatingLegData>
+          <Index>USD-LIBOR-3M</Index>
+          <Spreads>
+            <Spread>0.000000</Spread>
+          </Spreads>
+          <IsInArrears>false</IsInArrears>
+          <FixingDays>2</FixingDays>
+        </FloatingLegData>
+        <ScheduleData>
+          <Rules>
+            <StartDate>20160301</StartDate>
+            <EndDate>20260301</EndDate>
+            <Tenor>3M</Tenor>
+            <Calendar>US</Calendar>
             <Convention>MF</Convention>
             <TermConvention>MF</TermConvention>
             <Rule>Forward</Rule>
