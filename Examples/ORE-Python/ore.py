@@ -25,10 +25,10 @@ os.chdir(script_dir)
 
 print ("Loading parameters...")
 params = Parameters()
-# input_file = os.path.join("Input", "ore.xml")
+input_file = os.path.join("Input", "ore.xml")
 # input_file = os.path.join("Input", "ore_exp1.xml")
 # input_file = os.path.join("Input", "ore_exp3.xml")
-input_file = os.path.join("Input", "ore_sofr.xml")
+# input_file = os.path.join("Input", "ore_sofr.xml")
 params.fromFile(os.path.join(script_dir, input_file))
 
 print ("Creating OREApp...")
